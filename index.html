@@ -11,9 +11,9 @@
 
 <body>
   <div class="container-fluid">
-    <table class="table">
+    <table class="table table-bordered align-middle my-5">
       <thead>
-        <tr>
+        <tr class="text-center">
           <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">PHP</th>
@@ -24,10 +24,48 @@
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <td>Class</td>
+          <td>
+            <pre>
+             <code>
+              Class User {
+                public $name;
+                
+                function getName() {
+                  return $name;
+                }
+              }
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+              function User(name) {
+                this.name = name;
+                
+                this.getName = function() {
+                  return this.name;
+                }
+              }
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+              Class User {
+               constructor(name) {
+                 this.name = name;
+               }
+               
+               getName() {
+                 return this.name;
+               }
+              }
+              </code>
+            </pre>
+          </td>
         </tr>
       </tbody>
     </table>
