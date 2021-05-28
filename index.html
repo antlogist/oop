@@ -34,8 +34,8 @@
                   function getName() {
                     return $name;
                   }
-                  function setName(newName) {
-                    $this.name = newName;
+                  function setName($newName) {
+                    $this.name = $newName;
                   }
                 }
               </code>
@@ -76,14 +76,39 @@
             </pre>
           </td>
         </tr>
-
+        
         <tr>
           <th scope="row">2</th>
-          <td>Access<br>properties</td>
+          <td>Define<br>Objects</td>
           <td>
             <pre>
               <code>
                 $user = new User();
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+                const user = new User();
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+                const user = new User();
+              </code>
+            </pre>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">3</th>
+          <td>Access<br>properties</td>
+          <td>
+            <pre>
+              <code>
                 $user->name = 'Bob';
               </code>
             </pre>
@@ -91,7 +116,6 @@
           <td>
             <pre>
               <code>
-                const user = new User();
                 user.name = "Bob";
               </code>
             </pre>
@@ -99,7 +123,6 @@
           <td>
             <pre>
              <code>
-                const user = new User();
                 user.name = "Bob";
               </code>
             </pre>
@@ -107,12 +130,11 @@
         </tr>
         
         <tr>
-          <th scope="row">3</th>
+          <th scope="row">4</th>
           <td>Call<br>method</td>
           <td>
             <pre>
               <code>
-                $user = new User();
                 $user->setName('Bob');
               </code>
             </pre>
@@ -120,7 +142,6 @@
           <td>
             <pre>
               <code>
-                const user = new User();
                 user.setName('Bob');
               </code>
             </pre>
@@ -128,7 +149,6 @@
           <td>
             <pre>
              <code>
-                const user = new User();
                 user.setName('Bob');
               </code>
             </pre>
