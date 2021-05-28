@@ -28,41 +28,108 @@
           <td>
             <pre>
              <code>
-              Class User {
-                public $name;
-                
-                function getName() {
-                  return $name;
+                class User {
+                  public $name;
+
+                  function getName() {
+                    return $name;
+                  }
+                  function setName(newName) {
+                    $this.name = newName;
+                  }
                 }
-              }
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-              function User(name) {
-                this.name = name;
-                
-                this.getName = function() {
-                  return this.name;
+                function User(name) {
+                  this.name = name;
+
+                  this.getName = function() {
+                    return this.name;
+                  }
+                  this.setName = function(newName) {
+                    this.name = newName;
+                  }
                 }
-              }
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-              Class User {
-               constructor(name) {
-                 this.name = name;
-               }
-               
-               getName() {
-                 return this.name;
-               }
-              }
+                class User {
+                 constructor(name) {
+                   this.name = name;
+                 }
+
+                 getName() {
+                   return this.name;
+                 }
+                 setName(newName) {
+                   this.name = newName;
+                 }
+                }
+              </code>
+            </pre>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">2</th>
+          <td>Access<br>properties</td>
+          <td>
+            <pre>
+              <code>
+                $user = new User;
+                $user->name = 'Bob';
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+                const user = new User();
+                user.name = "Bob";
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+                const user = new User();
+                user.name = "Bob";
+              </code>
+            </pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <th scope="row">3</th>
+          <td>Call<br>method</td>
+          <td>
+            <pre>
+              <code>
+                $user = new User;
+                $user->setName('Bob');
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+                const user = new User();
+                user.setName('Bob');
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+                const user = new User();
+                user.setName('Bob');
               </code>
             </pre>
           </td>
