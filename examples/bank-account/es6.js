@@ -9,6 +9,13 @@
       this.balance = this.balance + amt;
     }
     deductAmount(amt) {
+      if (this.balance <= 0) {
+        return "No balance in the account.";
+      }
+      
+      if (this.balance < amt) {
+        return "Requested amount is grater than account";
+      }
       this.balance = this.balance - amt;
     }
     checkBalance() {
