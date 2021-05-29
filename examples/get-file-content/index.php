@@ -16,7 +16,7 @@
     public $fileName;
     public $content;
 
-    function displayContent() : string {
+    function displayContent() {
       echo $this->content;
     }
     
