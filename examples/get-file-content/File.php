@@ -5,7 +5,7 @@
     public $fileName;
     public $content;
 
-    function displayContent() {
+    function displayContent() : string {
       echo $this->content;
     }
     

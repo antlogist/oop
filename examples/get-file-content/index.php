@@ -20,7 +20,7 @@
       echo $this->content;
     }
     
-    function getContent() {
+    function getContent() : string {
       if (file_exists($this->fileName)) {
         $this->content = file_get_contents($this->fileName);
       }
