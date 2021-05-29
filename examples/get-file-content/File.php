@@ -10,9 +10,13 @@
     }
     
     function getContent() {
-      if (file_exists($this->fileName)) {
-        $this->content = file_get_contents($this->fileName);
+      
+      if (!file_exists($this->fileName)) {
+        echo "$this->fileName does not exist";
+        return;
       }
+      
+      $this->content = file_get_contents($this->fileName);
     }
   }
 
