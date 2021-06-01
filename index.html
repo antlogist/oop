@@ -28,76 +28,76 @@
           <td>
             <pre>
              <code>
-                class User {
-                  public $name;
+class User {
+  public $name;
 
-                  function getName() {
-                    return $this->name;
-                  }
-                  function setName($newName) {
-                    $this->name = $newName;
-                  }
-                }
+  function getName() {
+    return $this->name;
+  }
+  function setName($newName) {
+    $this->name = $newName;
+  }
+}
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-                function User(name) {
-                  this.name = name;
+function User(name) {
+  this.name = name;
 
-                  this.getName = function() {
-                    return this.name;
-                  }
-                  this.setName = function(newName) {
-                    this.name = newName;
-                  }
-                }
+  this.getName = function() {
+    return this.name;
+  }
+  this.setName = function(newName) {
+    this.name = newName;
+  }
+}
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-                class User {
-                 constructor(name) {
-                   this.name = name;
-                 }
+class User {
+ constructor(name) {
+   this.name = name;
+ }
 
-                 getName() {
-                   return this.name;
-                 }
-                 setName(newName) {
-                   this.name = newName;
-                 }
-                }
+ getName() {
+   return this.name;
+ }
+ setName(newName) {
+   this.name = newName;
+ }
+}
               </code>
             </pre>
           </td>
         </tr>
-        
+
         <tr>
           <th scope="row">2</th>
           <td>Define<br>Objects</td>
           <td>
             <pre>
               <code>
-                $user = new User();
+$user = new User();
               </code>
             </pre>
           </td>
           <td>
             <pre>
               <code>
-                const user = new User();
+const user = new User();
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-                const user = new User();
+const user = new User();
               </code>
             </pre>
           </td>
@@ -109,47 +109,86 @@
           <td>
             <pre>
               <code>
-                $user->name = 'Bob';
+$user->name = 'Bob';
               </code>
             </pre>
           </td>
           <td>
             <pre>
               <code>
-                user.name = "Bob";
+user.name = "Bob";
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-                user.name = "Bob";
+user.name = "Bob";
               </code>
             </pre>
           </td>
         </tr>
-        
+
         <tr>
           <th scope="row">4</th>
           <td>Call<br>method</td>
           <td>
             <pre>
               <code>
-                $user->setName('Bob');
+$user->setName('Bob');
               </code>
             </pre>
           </td>
           <td>
             <pre>
               <code>
-                user.setName('Bob');
+user.setName('Bob');
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-                user.setName('Bob');
+user.setName('Bob');
+              </code>
+            </pre>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">5</th>
+          <td>__construct</td>
+          <td>
+            <pre>
+              <code>
+class Sum {
+  function __construct($a, $b) {
+    echo $a + $b;
+  }
+}
+$user = new Sum(5, 25);
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+function SumES5(a, b) {
+  this.print = console.log(a + b);
+}
+const userES5 = new SumES5(5, 25);
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+class SumES6 {
+  constructor(a, b) {
+    this.print = console.log(a + b);
+  }
+}
+const userES6 = new SumES6(5, 25);
               </code>
             </pre>
           </td>
