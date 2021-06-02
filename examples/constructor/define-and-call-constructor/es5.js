@@ -1,9 +1,17 @@
 //es5
-function SumES5(a, b) {
-  this.print = console.log(a + b);
-
-  (function () {
-    console.log(a + b);
-  })();
+function ConstructorES5(a) {
+  this.a = a / 100;
+  console.log(this.a);
 }
-const userES5 = new SumES5(5, 10);
+const constructorES5 = new ConstructorES5(1);
+
+//es5 se
+function ConstructorES5se(a) {
+  this.a = a;
+  //self-exec function
+  (function () {
+    this.a = this.a / 100;
+  }.bind(this))();
+  console.log(this.a);
+}
+const constructorES5se = new ConstructorES5se(2);

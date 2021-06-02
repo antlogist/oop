@@ -1,7 +1,8 @@
 //es6
-class SumES6 {
-  constructor(a, b) {
-    this.print = console.log(a + b);
+class ConstructorES6 {
+  constructor(a) {
+    this.a = a / 100;
+    this.print = console.log(this.a);
   }
 }
-const userES6 = new SumES6(10, 15);
+const constructorES6 = new ConstructorES6(4);
