@@ -161,39 +161,59 @@ user.setName('Bob');
           <td>
             <pre>
               <code>
-class Sum {
-  function __construct($a, $b) {
-    echo $a + $b;
+class Constructor {
+  public $a;
+  function __construct($a) {
+    $this->a = $a / 100;
+    echo $this->a;
   }
 }
-$user = new Sum(5, 25);
               </code>
             </pre>
           </td>
           <td>
             <pre>
               <code>
-function SumES5(a, b) {
-  this.print = console.log(a + b);
-  
-  //self-executing function
-  (function() {
-    console.log(a + b);
-  })();
+//es5
+function ConstructorES5(a) {
+  this.a = a / 100;
+  console.log(this.a);
 }
-const userES5 = new SumES5(5, 25);
+             
+//es5 se
+function ConstructorES5se(a) {
+  this.a = a;
+  //self-exec function
+  (function() {
+    this.a = this.a / 100;
+  }.bind(this))();
+  console.log(this.a);
+}
+             
+//Function
+function ConstructorF(a) {
+  let _a = a / 100;
+  console.log(_a);
+}
+
+//Arrow func
+const ConstructorArrow = (a, b) => {
+  this.a = a/ 100;
+  this.print = console.log(this.a);
+}
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
-class SumES6 {
-  constructor(a, b) {
-    this.print = console.log(a + b);
+//es6
+class ConstructorES6 {
+  constructor(a) {
+    this.a = a / 100;
+    this.print = console.log(this.a);
   }
 }
-const userES6 = new SumES6(5, 25);
               </code>
             </pre>
           </td>
