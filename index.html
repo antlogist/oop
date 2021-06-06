@@ -249,6 +249,75 @@ class Destructor {
           </td>
         </tr>
         
+        <tr>
+          <th scope="row">7</th>
+          <td>Chain methods<br>
+          and properties</td>
+          <td>
+            <pre>
+              <code>
+class Chain {
+  public $name;
+  function methodOne() {
+    echo "Hi one";
+    $this->name = "methodOne";
+    return $this;
+  }
+  
+  function methodTwo() {
+    echo "Hi two $this->name";
+  }
+}
+
+$chain = new Chain();
+$chain->methodOne()->methodTwo();
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+function ChainES5() {
+  this.name = "";
+  this.methodOne = function() {
+    console.log("one");
+    this.name = "methodOne";
+    return this;
+  }
+  this.methodTwo = function() {
+    console.log(`two ${this.name}`);
+  }
+}
+
+const chainES5 = new ChainES5();
+chainES5.methodOne().methodTwo();
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+class ChainES6 {
+  constructor() {
+    this.name = ""
+  }
+  methodOne() {
+    console.log("one");
+    this.name = "methodOne";
+    return this;
+  }
+  methodTwo() {
+    console.log(`two ${this.name}`);
+  }
+}
+
+const chainES6 = new ChainES6();
+chainES6.methodOne().methodTwo();
+              </code>
+            </pre>
+          </td>
+        </tr>
+        
       </tbody>
     </table>
   </div>
