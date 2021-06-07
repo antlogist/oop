@@ -318,6 +318,46 @@ chainES6.methodOne().methodTwo();
           </td>
         </tr>
         
+        <tr>
+          <th scope="row">8</th>
+          <td>Incapsulation<br><small>(Private)</small></td>
+          <td>
+            <pre>
+              <code>
+-
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+function UserES5(name) {
+  let userName = name;
+  
+  return Object.freeze ({
+    getName: function() {
+      return userName;
+    },
+    setName: function(name) {
+      userName = name;
+    }
+  });
+}
+
+const userES5 = new UserES5("Anthony");
+console.log(userES5.getName());
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+-
+              </code>
+            </pre>
+          </td>
+        </tr>
+        
       </tbody>
     </table>
   </div>
