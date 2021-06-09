@@ -324,13 +324,28 @@ chainES6.methodOne().methodTwo();
           <td>
             <pre>
               <code>
--
+class User {
+  private $name;
+  function __construct($name) {
+    $this->name = $name;
+  }
+  function getName() {
+    return $this->name;
+  }
+  function setName($name) {
+    $this->name = $name;
+  }
+}
+
+$user = new User("Ant");
+echo $user->getName();
               </code>
             </pre>
           </td>
           <td>
             <pre>
               <code>
+<b><i>// Object.freeze</i></b>
 function UserES5(name) {
   let userName = name;
   
@@ -346,13 +361,47 @@ function UserES5(name) {
 
 const userES5 = new UserES5("Anthony");
 console.log(userES5.getName());
+
+<b><i>// Object.freeze & Symbol</i></b>
+function UserSymbol(name) {
+  
+  const symbol = Symbol();
+  
+  return Object.freeze ({
+    [symbol]: name,
+    getName: function() {
+      return this[symbol];
+    },
+    setName: function(name) {
+      this[symbol] = name;
+    }
+  });
+}
+
+const userSymbol = new UserSymbol("John");
+console.log(userSymbol.getName());
               </code>
             </pre>
           </td>
           <td>
             <pre>
              <code>
--
+class UserES6 {
+  #name;
+  constructor(name) {
+    this.#name = name;
+  }
+  getName() {
+    return this.#name;
+  }
+  setName(name) {
+    this.#name = name;
+  }
+}
+
+const userES6 = new UserES6("Bob");
+console.log(userES6.name);
+console.log(userES6.getName());
               </code>
             </pre>
           </td>
