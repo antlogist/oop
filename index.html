@@ -489,7 +489,7 @@ ParentClass.prototype.getParentName = function() {
 import ParentClass from "./Parent.js";
 
 export default function ChildClass(childName, parentClass) {
-  PParentClass.call(this, parentClass.parentName, parentClass.parentSurename);
+  ParentClass.call(this, parentClass.parentName, parentClass.parentSurename);
   this.childName = childName;
   
   this.getParentName = function() {
