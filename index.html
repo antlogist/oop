@@ -320,7 +320,7 @@ chainES6.methodOne().methodTwo();
         
         <tr>
           <th scope="row">8</th>
-          <td>Incapsulation<br><small>(Private)</small></td>
+          <td>Private</td>
           <td>
             <pre>
               <code>
@@ -402,6 +402,112 @@ class UserES6 {
 const userES6 = new UserES6("Bob");
 console.log(userES6.name);
 console.log(userES6.getName());
+              </code>
+            </pre>
+          </td>
+        </tr>
+        
+        <tr>
+          <th scope="row">9</th>
+          <td>Inheritance</td>
+          <td>
+            <pre>
+              <code>
+<b>// Inheritance.php</b>
+include_once "Parent.php";
+include_once "Child.php";
+
+$parent = new ParentClass("Parent Class");
+
+$child = new ChildClass("Child Class", $parent);
+echo $child->childName;
+echo $child->getChildName();
+echo $child->parentName;
+echo $child->getParentName();
+echo $child->parentSurename;
+            
+<b>// Parent.php</b>
+class ParentClass {
+  public $parentName;
+  public $parentSurename;
+  function __construct($parentName, 
+                       $parentSurename = "Parent Surename") {
+    $this->parentName = $parentName;
+    $this->parentSurename = $parentSurename;
+  }
+  function getParentName() {
+    return "Get parent name: $this->parentName";
+  }
+}
+            
+<b>// Child.php</b>
+class ChildClass extends ParentClass {
+  public $childName;
+  function __construct($childName, ParentClass $parentClass) {
+    $this->childName = $childName;
+    $this->parentName = $parentClass->parentName;
+    $this->parentSurename = $parentClass->parentSurename;
+  }
+  
+  function getChildName() {
+    return "Get child name: $this->childName";
+  }
+}
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+              <code>
+-
+              </code>
+            </pre>
+          </td>
+          <td>
+            <pre>
+             <code>
+<b>// Inheritance.js</b>
+import ParentClass from "./Parent.js";
+import ChildClass from "./Child.js";
+
+const parent = new ParentClass("Parent Class");
+
+const child = new ChildClass("Child Class", parent);
+console.log(child.childName);
+console.log(child.parentName);
+console.log(child.parentSurename);
+console.log(child.getParentName());
+             
+<b>// Parent.js</b>
+export default class ParentClass {
+  constructor(parentName, parentSurename = "Parent Surename") {
+    this.parentName = parentName;
+    this.parentSurename = parentSurename;
+  }
+  getParentName() {
+    return `Get parent name: ${this.parentName}`;
+  }
+}
+             
+<b>// Child.js</b>
+import ParentClass from "./Parent.js";
+
+export default class ChildClass extends ParentClass {
+  constructor(childName, parentClass) {
+    super(parentClass);
+    this.childName = childName;
+    this.parentName = parentClass.parentName;
+    this.parentSurename = parentClass.parentSurename;
+  }
+  
+  getParentName() {
+    return super.getParentName();
+  }
+
+  getChildName() {
+    console.log(`Get child name: ${this.childName}`);
+  }
+}
               </code>
             </pre>
           </td>
