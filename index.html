@@ -459,7 +459,50 @@ class ChildClass extends ParentClass {
           <td>
             <pre>
               <code>
--
+<b>// Inheritance.js</b>
+import ParentClass from "./Parent.js";
+import ChildClass from "./Child.js";
+
+const parent = new ParentClass("Parent Class");
+
+const child = new ChildClass("Child Class", parent);
+console.log(child.childName);
+console.log(child.parentName);
+console.log(child.parentSurename);
+console.log(child.getParentName());
+console.log(child.getChildName());
+
+<b>// Parent.js</b>
+export default function ParentClass(
+  parentName,
+  parentSurename = "Parent Surename"
+) {
+  this.parentName = parentName;
+  this.parentSurename = parentSurename;
+}
+
+ParentClass.prototype.getParentName = function() {
+  return `Get parent name: ${this.parentName}`;
+}
+
+<b>// Child.js</b>
+import ParentClass from "./Parent.js";
+
+export default function ChildClass(childName, parentClass) {
+  ParentClass.call(this, childName, parentClass);
+  this.childName = childName;
+  this.parentName = parentClass.parentName;
+  this.parentSurename = parentClass.parentSurename;
+  
+  this.getParentName = function() {
+    return parentClass.getParentName();
+  }
+  
+  this.getChildName = function() {
+    return this.childName;
+  }
+}
+
               </code>
             </pre>
           </td>
